@@ -53,7 +53,8 @@ class StoriesController < ApplicationController
         # redirect_to @story, notice: 'Story Edited Successfully!'
       # end
     else
-      flash.now[:error] = 'Oops! Please fill in all required fields and try again.'
+      flash.now[:error] = 'Oops! Please fill in all
+        required fields and try again.'
       render :edit
       # render :edit, notice: 'You are not the authorized user'
     end
@@ -75,5 +76,5 @@ class StoriesController < ApplicationController
     if !user_signed_in?
       raise ActionController::RoutingError.new("Not Found")
     end
- end
+  end
 end

@@ -4,7 +4,8 @@ FactoryGirl.define do
     sequence(:body) { |n| "I suppose in the end,
       the whole of life becomes an act of letting go,
       but what always hurts the most is not taking
-      a moment to say goodbye. At least just #{n} times " }
+      a moment to say goodbye. At least just #{n} times "
+    }
     association :creator, factory: :user
   end
 end
