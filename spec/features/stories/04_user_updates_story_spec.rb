@@ -51,7 +51,8 @@ feature 'user Creates story', %{
     fill_in('story[body]', with: body)
     click_button('Create Story')
 
-    expect(page).to have_content("Oops! Please fill in all required fields and try again.")
+    expect(page).to have_content("Oops! Please fill
+    in all required fields and try again.")
     expect(find_field('story[title]').value).to eq('')
     expect(find_field('story[body]').value).to eq(body)
   end

@@ -6,19 +6,18 @@ feature 'Allow limited access to an authenticated user', %{
   To get a feel for the site before signing up
 } do
 
-# ACCEPTANCE CRITERIA
-# [ ] I can see a button to add a new story
-# [ ] If successful, success notice should display
-# [ ] Upon success, redirected to the story's show page
-# [ ] An inadequte form should generate errors
-# [ ] Unsuccessful submision, should not be saved
+  # ACCEPTANCE CRITERIA
+  # [ ] I can see a button to add a new story
+  # [ ] If successful, success notice should display
+  # [ ] Upon success, redirected to the story's show page
+  # [ ] An inadequte form should generate errors
+  # [ ] Unsuccessful submision, should not be saved
 
   let!(:user) { FactoryGirl.create(:user) }
   let!(:story_list) { FactoryGirl.create_list(:story, 12) }
 
   xscenario 'unauthenticated user views only 6 stories' do
     visit root_path
-    binding.pry
     expect(Story.all).to (6).items
   end
 

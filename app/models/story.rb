@@ -1,8 +1,8 @@
 class Story < ActiveRecord::Base
   belongs_to :creator, class_name: 'User'
-  validates :title, presence: true, null:false
+  validates :title, presence: true, null: false
   before_validation :strip_whitespace
-  validates :body, presence: true, null:false
+  validates :body, presence: true, null: false
 
   def short_body
     desired_length = 40

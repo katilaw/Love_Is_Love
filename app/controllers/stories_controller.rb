@@ -38,8 +38,8 @@ class StoriesController < ApplicationController
 
   def edit
     @story = Story.find(params[:id])
-
   end
+
   def update
     @story = Story.find(params[:id])
 
@@ -72,8 +72,8 @@ class StoriesController < ApplicationController
   end
 
   def authorize_user
-   if !user_signed_in?
-     raise ActionController::RoutingError.new("Not Found")
-   end
+    if !user_signed_in?
+      raise ActionController::RoutingError.new("Not Found")
+    end
  end
 end
