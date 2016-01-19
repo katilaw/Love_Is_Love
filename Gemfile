@@ -41,9 +41,9 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'valid_attribute'
-  gem 'shoulda-matchers', require: false
   gem 'launchy', require: false
+  gem 'valid_attribute'
+  gem 'shoulda', require: false
   gem 'orderly'
   gem 'quiet_assets'
 end

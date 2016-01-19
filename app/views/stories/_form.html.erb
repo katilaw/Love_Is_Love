@@ -1,0 +1,16 @@
+<div class="inline">
+
+<%= form_for [@story] do |f| %>
+
+  <%= f.label :title, class:'form-text' %>
+  <%= f.text_field :title %>
+
+  <%= f.label :body, class:'form-text' %>
+  <%= f.text_field :body %>
+
+  <%= f.hidden_field :creator, value: current_user %>
+
+<div class="actions">
+  <%= f.submit 'Create Story', class: 'button'%>
+<% end %>
+</div>

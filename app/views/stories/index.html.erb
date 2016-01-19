@@ -1,0 +1,13 @@
+<h6>Index Page</h6>
+
+<div class="row">
+    <ul class="button add-story">
+      <%= link_to 'Add New Story', new_story_path %>
+    </ul>
+</div>
+
+<div class="lifehacklist small-12 medium-8 columns ">
+  <ul>
+    <%= render @stories %>
+  </ul>
+</div>
