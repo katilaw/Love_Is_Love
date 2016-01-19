@@ -1,0 +1,19 @@
+<div class="row">
+  <ul class="button add-story">
+    <% if @story.creator == current_user %>
+      <%= link_to 'Edit Story', edit_story_path(@story) %>
+      <%= button_to 'Delete Story', @story, { method: :delete} %>
+    <% end %>
+  </ul>
+</div>
+
+<div class="panel lifehack_title small-12 columns ">
+    <h2><%= @story.title %></h2>
+</div>
+
+<body>
+  <p>
+    <%= @story.body %>
+    <%= @story.created_at %>
+  </p>
+</body>

@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="panel small-12 columns clearfix">
+    <table>
+      <h5 class="story-link"><%= link_to story.title, story_path(story) %></h5>
+      <h3 class="story-description"><%= story.short_body %></h3>
+      <tbody>
+        <tr>
+          <td>Updated: <%= time_ago_in_words(story.updated_at)%> ago</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
