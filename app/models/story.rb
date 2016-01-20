@@ -1,5 +1,6 @@
 class Story < ActiveRecord::Base
   belongs_to :creator, class_name: 'User'
+  has_many :comments
   validates :title, presence: true, null: false
   before_validation :strip_whitespace
   validates :body, presence: true, null: false

@@ -1,7 +1,7 @@
 <div class="row">
   <ul class="button add-story">
     <% if @story.creator == current_user %>
-      <%= link_to 'Edit Story', edit_story_path(@story) %>
+      <%= link_to 'Edit Story', edit_story_path(@story), class: 'button' %>
       <%= button_to 'Delete Story', @story, { method: :delete} %>
     <% end %>
   </ul>
@@ -17,3 +17,14 @@
     <%= @story.created_at %>
   </p>
 </body>
+
+<table>
+  <ul class="button add-comment">
+    <%= link_to 'Create Comment', new_story_comment_path(@story), class: 'button' %>
+  </ul>
+  <%= @comments.each do |comment| %>
+  <td>
+    <%= comment.body %>
+  </td>
+  <% end %>
+</table>
