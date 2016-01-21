@@ -11,10 +11,10 @@ feature 'user deletes story', %{
   # [√] Delete comments associated with Story
 
   let!(:user) { FactoryGirl.create(:user) }
-  let (:user2) { FactoryGirl.create(:user) }
-  let (:story) { FactoryGirl.create(:story, creator: user) }
-  let (:story2) { FactoryGirl.create(:story, creator: user2) }
-  let (:comment) { FactoryGirl.create(:comment, story: story) }
+  let(:user2) { FactoryGirl.create(:user) }
+  let(:story) { FactoryGirl.create(:story, creator: user) }
+  let(:story2) { FactoryGirl.create(:story, creator: user2) }
+  let(:comment) { FactoryGirl.create(:comment, story: story) }
 
   scenario 'navigate to story show page and delete story' do
     story

@@ -11,7 +11,7 @@ feature 'let user edit comment', %{
   # [√] I can edit the comment on a story
   # [√] Successfully update appears on the story show page
   # [√] Comments should be ordered by creation date
-  # [] An unsuccessful comment should not appear on the stories show page
+  # [√] An unsuccessful comment should not appear on the stories show page
 
   let!(:user) { FactoryGirl.create(:user) }
   let!(:user2) { FactoryGirl.create(:user) }

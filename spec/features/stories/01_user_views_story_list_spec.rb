@@ -10,7 +10,7 @@ feature 'user view story list', %{
 
   # [√] I should see an index of all stories at the root of the app
   # [√] I should see the title, date
-  # [] I should see a list sorted by date by default
+  # [√] I should see a list sorted by date by default
 
   feature "authenticate user sees list of stories" do
     scenario "user sees the latest 10 storiess" do
