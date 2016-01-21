@@ -1,5 +1,4 @@
 require 'rails_helper'
-
 feature 'user adds story', %{
   As a User
   I want to add a story

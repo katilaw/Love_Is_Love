@@ -8,15 +8,18 @@ feature 'user deletes story', %{
   # Acceptance Criteria:
   # [√] I must be able delete a story from the story show page
   # [√] If I am not the creator, I cannot delete the story
-  # [] Delete comments associated with Story
+  # [√] Delete comments associated with Story
 
   let!(:user) { FactoryGirl.create(:user) }
-  let!(:user2) { FactoryGirl.create(:user) }
-  let!(:story) { FactoryGirl.create(:story, creator: user) }
-  let!(:story2) { FactoryGirl.create(:story, creator: user2) }
-  # let!(:comment) { FactoryGirl.create(:comments, story: story) }
+  let(:user2) { FactoryGirl.create(:user) }
+  let(:story) { FactoryGirl.create(:story, creator: user) }
+  let(:story2) { FactoryGirl.create(:story, creator: user2) }
+  let(:comment) { FactoryGirl.create(:comment, story: story) }
 
   scenario 'navigate to story show page and delete story' do
+    story
+    story2
+
     user_sign_in(user)
     expect(page).to have_content(story.title)
     expect(page).to have_content(story2.title)
@@ -31,7 +34,9 @@ feature 'user deletes story', %{
     expect(page).to have_content(story2.title)
   end
 
-  scenario 'user attempts to edit another user\'s story' do
+  scenario 'user attempts to delete another user\'s story' do
+    story2
+
     user_sign_in(user)
     expect(page).to have_content(story2.title)
 
@@ -40,6 +45,16 @@ feature 'user deletes story', %{
     expect(page).to_not have_button('Delete Story')
   end
 
-  xscenario 'Deleting story destroyes comment' do
+  scenario 'Deleting story destroyes comment' do
+    story
+    story2
+    comment
+
+    user_sign_in(user)
+    click_link(story.title)
+
+    click_button('Delete Story')
+
+    expect(Comment.all.empty?).to be(true)
   end
 end

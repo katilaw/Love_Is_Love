@@ -1,0 +1,17 @@
+<div class="inline">
+  <%= form_for [@story, @comment] do |f| %>
+
+  <%= f.label :body, class:'form-text' %>
+  <%= f.text_field :body %>
+
+  <%= f.hidden_field :creator_id, value: current_user.id %>
+
+  <div class="actions">
+    <% unless current_page?(new_story_comment_path(@story)) %>
+      <%= f.submit 'Update Comment', class: 'button'%>
+    <% else %>
+      <%= f.submit 'Create Comment', class: 'button'%>
+    <% end %>
+  </div>
+  <% end %>
+</div>

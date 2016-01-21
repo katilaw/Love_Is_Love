@@ -12,8 +12,8 @@ feature 'user Creates story', %{
   # [] If I am not the creator, I cannot modify the content of the story
 
   let!(:user) { FactoryGirl.create(:user) }
-  let (:tale) { FactoryGirl.create(:story, creator: user) }
-  let (:user2) { FactoryGirl.create(:user) }
+  let(:tale) { FactoryGirl.create(:story, creator: user) }
+  let(:user2) { FactoryGirl.create(:user) }
 
   scenario 'navigate to story show page and edit story' do
     tale

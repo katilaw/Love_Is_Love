@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="comment comment-<%= comment.id %>">
+    <table>
+      <tbody>
+      <tr class="com_row">
+        <td>
+          <div class="button edit-comment">
+            <% if user_signed_in? %>
+              <% if comment.creator == current_user || comment.story.creator == current_user %>
+                <div class="crud-action-panel">
+                  <%= link_to 'Edit Comment', edit_story_comment_path(comment.story.id, comment.id) %>
+                  <%= button_to 'Delete Comment', story_comment_path(comment.story, comment),  { method: :delete } %>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </td>
+        <td class="comment_details"><%= comment.body %></td>
+        <td><%= time_ago_in_words(comment.created_at)%> ago</td>
+      </tr>
+    </tbody>
+    </table>
+  </div>
+</div>
+<br>
