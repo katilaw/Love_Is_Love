@@ -8,7 +8,7 @@ feature 'user deletes comment', %{
   # Acceptance Criteria:
   # [√] I must be able delete comment
   # [√] Comment must be removed from story show page
-  # [] Only story creater & comment creator can delete comment
+  # [√] Only story creater & comment creator can delete comment
 
   let!(:user) { FactoryGirl.create(:user) }
   let (:user2) { FactoryGirl.create(:user) }

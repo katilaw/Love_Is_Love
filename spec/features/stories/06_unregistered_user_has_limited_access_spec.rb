@@ -7,17 +7,16 @@ feature 'Allow unauthenticated user limited access', %{
 } do
 
   # ACCEPTANCE CRITERIA
-  # [ ] If successful, success notice should display
-  # [ ] Upon success, redirected to the story's show page
-  # [ ] An inadequte form should generate errors
-  # [ ] Unsuccessful submision, should not be saved
+  # [√] If successful, success notice should display
+  # [√] Upon success, redirected to the story's show page
+  # [√] An inadequte form should generate errors
+  # [√] Unsuccessful submision, should not be saved
 
-  let (:story_list) { FactoryGirl.create_list(:story, 8) }
+  let :story_list { FactoryGirl.create_list(:story, 8) }
 
   scenario 'unauthenticated user views only 6 stories' do
     story_list
     visit root_path
-    
     story_list[2..7].each do |story|
       expect(page).to have_content(story.title)
     end

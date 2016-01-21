@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-
   def new
     if user_signed_in?
       @story = Story.find(params[:story_id])
