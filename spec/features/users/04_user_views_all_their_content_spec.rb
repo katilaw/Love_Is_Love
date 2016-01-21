@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Authenticated accesses al their content', %{
+feature 'Authenticated access all their content', %{
   As a user
   I want to view all my content
   So that I can view all my stories and comments

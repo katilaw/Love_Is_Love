@@ -11,7 +11,11 @@ class StoriesController < ApplicationController
 
   def show
     @story = Story.find(params[:id])
-    @comments = @story.comments
+    @comment = Comment.new
+    if user_signed_in?
+      @comments = @story.comments.order(created_at: :desc)
+
+    end
   end
 
   def new
@@ -62,7 +66,14 @@ class StoriesController < ApplicationController
   end
 
   def destroy
-    @story = Story.destroy(params[:id])
+    @story = Story.find(params[:id])
+
+    @story.comments.each do |comment|
+      comment.destroy
+    end
+
+    @story.destroy
+
     redirect_to root_path,
       notice: "Your story was safely erased"
   end

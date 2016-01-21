@@ -13,7 +13,7 @@ feature 'user view story list', %{
   # [] I should see a list sorted by date by default
 
   feature "authenticate user sees list of stories" do
-    xscenario "user sees the latest 10 storiess" do
+    scenario "user sees the latest 10 storiess" do
       user = FactoryGirl.create(:user)
       stories = FactoryGirl.create_list(:story, 10)
 

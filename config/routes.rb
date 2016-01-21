@@ -6,6 +6,6 @@ Rails.application.routes.draw do
     :edit, :update, :show, :destroy]
 
   resources :stories, only: [:show] do
-    resources :comments, only: [:new, :create]
+    resources :comments, only: [:new, :edit, :update, :create, :destroy]
   end
 end

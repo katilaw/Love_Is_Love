@@ -4,6 +4,10 @@
       <%= link_to 'Edit Story', edit_story_path(@story), class: 'button' %>
       <%= button_to 'Delete Story', @story, { method: :delete} %>
     <% end %>
+    <% if user_signed_in? %>
+      <%= link_to 'Add Comment', new_story_comment_path(@story),
+      class: 'button' %>
+    <% end %>
   </ul>
 </div>
 
@@ -19,12 +23,11 @@
 </body>
 
 <table>
-  <ul class="button add-comment">
-    <%= link_to 'Create Comment', new_story_comment_path(@story), class: 'button' %>
-  </ul>
-  <%= @comments.each do |comment| %>
-  <td>
-    <%= comment.body %>
-  </td>
+  <% if user_signed_in? && !@story.comments.empty? %>
+    <%= render @comments %>
+  <% elsif @story.comments.empty? %>
+    No coments yet!
+  <% else %>
+    Sign up to get access to full content.
   <% end %>
 </table>
