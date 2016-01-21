@@ -8,7 +8,7 @@ feature 'user deletes story', %{
   # Acceptance Criteria:
   # [√] I must be able delete a story from the story show page
   # [√] If I am not the creator, I cannot delete the story
-  # [] Delete comments associated with Story
+  # [√] Delete comments associated with Story
 
   let!(:user) { FactoryGirl.create(:user) }
   let (:user2) { FactoryGirl.create(:user) }
@@ -54,7 +54,7 @@ feature 'user deletes story', %{
     click_link(story.title)
 
     click_button('Delete Story')
-    
+
     expect(Comment.all.empty?).to be(true)
   end
 end

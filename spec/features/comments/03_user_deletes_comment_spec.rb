@@ -11,11 +11,11 @@ feature 'user deletes comment', %{
   # [√] Only story creater & comment creator can delete comment
 
   let!(:user) { FactoryGirl.create(:user) }
-  let (:user2) { FactoryGirl.create(:user) }
+  let(:user2) { FactoryGirl.create(:user) }
   let!(:story) { FactoryGirl.create(:story, creator: user) }
-  let (:story2) { FactoryGirl.create(:story, creator: user2) }
-  let (:comment) { FactoryGirl.create(:comment, story: story, creator: user) }
-  let (:comment2) { FactoryGirl.create(:comment, story: story, creator: user2) }
+  let(:story2) { FactoryGirl.create(:story, creator: user2) }
+  let(:comment) { FactoryGirl.create(:comment, story: story, creator: user) }
+  let(:comment2) { FactoryGirl.create(:comment, story: story, creator: user2) }
 
   scenario 'user deletes comment successfully' do
     user2

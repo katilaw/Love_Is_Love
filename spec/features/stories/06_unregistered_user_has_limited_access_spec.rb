@@ -12,7 +12,7 @@ feature 'Allow unauthenticated user limited access', %{
   # [√] An inadequte form should generate errors
   # [√] Unsuccessful submision, should not be saved
 
-  let :story_list { FactoryGirl.create_list(:story, 8) }
+  let(:story_list) { FactoryGirl.create_list(:story, 8) }
 
   scenario 'unauthenticated user views only 6 stories' do
     story_list
