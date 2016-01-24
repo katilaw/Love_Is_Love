@@ -55,7 +55,7 @@
 // $rem-base: 16px;
 
 // Allows the use of rem-calc() or lower-bound() in your settings
-@import 'foundation/functions';
+@import "foundation/functions";
 
 // The default font-size is set to 100% of the browser style sheet (usually 16px)
 // for compatibility with browser-based text zoom or user-set defaults.
@@ -117,12 +117,15 @@ $include-html-global-classes: $include-html-classes;
 
 // We use these as default colors throughout
 // $primary-color: #008CBA;
+$solid-black: #000000;
 $custom-grey-color: #222222;
+$custon-bg-color: #9cafb0;
 $custom-orange-color: #cf6e0e;
 $custom-white-color: #e7e7e7;
 $stolen-blue-color: #008cba;
 $alert-blue-color: #009fba;
 $custom-alert-green: #00ba91;
+$replacement-white: #ffffff;
 // $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
@@ -381,8 +384,8 @@ $alert-bottom-margin: 0;
 // $alert-close-top: 50%;
 // $alert-close-position: rem-calc(4);
 // $alert-close-font-size: rem-calc(22);
-$alert-close-opacity: .5;
-$alert-close-opacity-hover: .9;
+$alert-close-opacity: 0.5;
+$alert-close-opacity-hover: 0.9;
 // $alert-close-padding: 9px 6px 4px;
 // $alert-close-background: inherit;
 
@@ -1311,9 +1314,9 @@ $table-border-size: 6px;
 $table-border-color: $custom-white-color;
 
 // These control the table head styles
-$table-head-bg: white;
+$table-head-bg: $replacement-white;
 // $table-head-font-size: rem-calc(14);
-$table-head-font-color: white;
+$table-head-font-color: $replacement-white;
 // $table-head-font-weight: $font-weight-bold;
 // $table-head-padding: rem-calc(8 10 10);
 
@@ -1410,7 +1413,7 @@ $table-head-font-color: white;
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-$topbar-bg-color: black;
+$topbar-bg-color: $solid-black;
 $topbar-bg: $topbar-bg-color;
 
 // Height and margin
@@ -1495,4 +1498,4 @@ $topbar-sticky-class: ".sticky";
 // $include-table-visibility-classes: true;
 // $include-legacy-visibility-classes: true;
 
-@import 'foundation';
+@import "foundation";

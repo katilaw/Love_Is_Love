@@ -1,5 +1,5 @@
 .overlay-container {
-  background: #000000;
+  background: $solid-black;
   height: 23rem;
   overflow: hidden;
   padding-left: 15%;
@@ -13,7 +13,7 @@
   left: 0;
   right: 0;
   padding: 4rem 2rem 2rem 1rem;
-  color: white;
+  color: $replacement-white;
   margin: 0;
   width: 30%;
 }
@@ -32,11 +32,11 @@ p {
 }
 
 .top-bar {
-  box-shadow: 0 4px #cf6e0e;
+  box-shadow: 0 4px $custom-orange-color;
 }
 
 body {
-  background-color: #9cafb0;
+  background-color: $custon-bg-color;
 }
 
 @media #{$small-only} {
@@ -57,7 +57,6 @@ body {
   }
 
   f-topbar-fixed {
-
     font-size: -100%;
     padding-top: 0;
   }
@@ -75,7 +74,7 @@ body {
 }
 
 .specialtext {
-  color: #ffffff;
+  color: $replacement-white;
 }
 
 .alert-box.info {
