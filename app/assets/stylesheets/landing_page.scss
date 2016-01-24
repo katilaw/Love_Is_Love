@@ -1,9 +1,9 @@
 .overlay-container {
-  position: relative;
-  overflow: hidden;
-  height: 23rem;
-  padding-left: 15%;
   background: #000000;
+  height: 23rem;
+  overflow: hidden;
+  padding-left: 15%;
+  position: relative;
 }
 
 .overlay-container .overlay {
@@ -27,8 +27,8 @@ p {
 }
 
 .f-topbar-fixed {
-    border-bottom: 10px;
-    padding-top: 0;
+  border-bottom: 10px;
+  padding-top: 0;
 }
 
 .top-bar {
@@ -43,17 +43,19 @@ body {
   p {
     font-size: 50%;
   }
+
   .overlay-container .overlay {
-    position: absolute;
-    top: 0;
     bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 0.2rem 1rem 1rem 1rem;
     color: white;
+    left: 0;
     margin: 0;
+    padding: 0.2rem 1rem 1rem;
+    position: absolute;
+    right: 0;
+    top: 0;
     width: 30%;
   }
+
   f-topbar-fixed {
 
     font-size: -100%;
@@ -62,8 +64,8 @@ body {
 }
 
 .devise-signup {
-  width: 40%;
   margin-top: 4rem;
+  width: 40%;
 }
 
 .new-story-form {
@@ -77,10 +79,10 @@ body {
 }
 
 .alert-box.info {
-  background-color: #00ba91;
+  background-color: $custom-alert-green;
 }
 
 .registration {
-  border-style: none;;
+  border-style: none;
   border-width: 0;
 }
