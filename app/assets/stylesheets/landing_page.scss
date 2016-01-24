@@ -1,0 +1,86 @@
+.overlay-container {
+  position: relative;
+  overflow: hidden;
+  height: 23rem;
+  padding-left: 15%;
+  background: #000000;
+}
+
+.overlay-container .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 4rem 2rem 2rem 1rem;
+  color: white;
+  margin: 0;
+  width: 30%;
+}
+
+p {
+  font-size: 100%;
+}
+
+.addstory {
+  margin-top: 1.25rem;
+}
+
+.f-topbar-fixed {
+    border-bottom: 10px;
+    padding-top: 0;
+}
+
+.top-bar {
+  box-shadow: 0 4px #cf6e0e;
+}
+
+body {
+  background-color: #9cafb0;
+}
+
+@media #{$small-only} {
+  p {
+    font-size: 50%;
+  }
+  .overlay-container .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0.2rem 1rem 1rem 1rem;
+    color: white;
+    margin: 0;
+    width: 30%;
+  }
+  f-topbar-fixed {
+
+    font-size: -100%;
+    padding-top: 0;
+  }
+}
+
+.devise-signup {
+  width: 40%;
+  margin-top: 4rem;
+}
+
+.new-story-form {
+  width: 50%;
+  height: 80%;
+  margin-top: 3rem;
+}
+
+.specialtext {
+  color: #ffffff;
+}
+
+.alert-box.info {
+  background-color: #00ba91;
+}
+
+.registration {
+  border-style: none;;
+  border-width: 0;
+}

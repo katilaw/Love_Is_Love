@@ -1,17 +1,19 @@
-<div class="inline">
-  <%= form_for [@story, @comment] do |f| %>
+<div class="panel devise-signup small-12 small-centered medium-8 columns">
+  <div class="inline">
+    <%= form_for [@story, @comment] do |f| %>
 
-  <%= f.label :body, class:'form-text' %>
-  <%= f.text_field :body %>
+      <%= f.label :body, class:'form-text' %>
+      <%= f.text_area :body, size: "20x5" %>
 
-  <%= f.hidden_field :creator_id, value: current_user.id %>
+      <%= f.hidden_field :creator_id, value: current_user.id %>
 
-  <div class="actions">
-    <% unless current_page?(new_story_comment_path(@story)) %>
-      <%= f.submit 'Update Comment', class: 'button'%>
-    <% else %>
-      <%= f.submit 'Create Comment', class: 'button'%>
+      <div class="actions">
+        <% unless current_page?(new_story_comment_path(@story)) %>
+          <%= f.submit 'Update Comment', class: 'button tiny round'%>
+        <% else %>
+          <%= f.submit 'Create Comment', class: 'button tiny round'%>
+        <% end %>
+      </div>
     <% end %>
   </div>
-  <% end %>
 </div>
