@@ -1,16 +1,21 @@
-<div class="inline">
+<div class="panel new-story-form small-12 small-centered medium-8 columns">
+  <div class="inline">
+    <%= form_for [@story] do |f| %>
 
-<%= form_for [@story] do |f| %>
+      <%= f.label :title, class:'form-text' %>
+      <%= f.text_field :title %>
 
-  <%= f.label :title, class:'form-text' %>
-  <%= f.text_field :title %>
+      <%= f.label :body, class:'form-text' %>
+      <%= f.text_area :body, size: "20x16" %>
 
-  <%= f.label :body, class:'form-text' %>
-  <%= f.text_field :body %>
+      <%= f.hidden_field :creator, value: current_user %>
 
-  <%= f.hidden_field :creator, value: current_user %>
-
-<div class="actions">
-  <%= f.submit 'Create Story', class: 'button'%>
-<% end %>
+    <div class="actions">
+      <% unless current_page?(new_story_path(@story)) %>
+        <%= f.submit 'Update Story', class: 'button tiny round'%>
+      <% else %>
+        <%= f.submit 'Create Story', class: 'button tiny round'%>
+      <% end %>
+  </div>
+  <% end %>
 </div>

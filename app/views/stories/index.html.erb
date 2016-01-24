@@ -1,13 +1,27 @@
-<h6>Index Page</h6>
-
-<div class="row">
-    <ul class="button add-story">
-      <%= link_to 'Add New Story', new_story_path %>
-    </ul>
+<div class="overlay-container">
+  <%= image_tag "rodin-kiss-large.jpg" %>
+  <div class="row text-center overlay quote small-centered">
+    <p>
+      To love or have loved, that is enough.
+    </p>
+    <p>
+      Ask nothing further.
+    </p>
+    <p>
+      There is no other pearl to be found in the dark folds of life.
+    </p>
+    <p>
+      ~ Victor Hugo
+    </p>
+  </div>
 </div>
 
-<div class="lifehacklist small-12 medium-8 columns ">
+<div class="row">
+  <div class="large-3 large-centered small-8 small-centered columns">
+    <%= link_to 'Add New Story', new_story_path, class: "addstory button round" %>
+  </div>
+</div>
+
   <ul>
     <%= render @stories %>
   </ul>
-</div>

@@ -30,8 +30,7 @@ gem 'devise'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'foundation-rails'
-gem 'devise'
+gem 'foundation-rails', '5.5.3.2'
 gem 'faker'
 gem 'factory_girl_rails'
 

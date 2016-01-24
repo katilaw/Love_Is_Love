@@ -9,7 +9,7 @@ feature 'user Creates story', %{
   # [√] I must provide all of the required information
   # [√] If the information is incorrect, I must be provided errors
   # [√] If I am not logged in, I cannot modify the content of the story
-  # [] If I am not the creator, I cannot modify the content of the story
+  # [√] If I am not the creator, I cannot modify the content of the story
 
   let!(:user) { FactoryGirl.create(:user) }
   let(:tale) { FactoryGirl.create(:story, creator: user) }
@@ -29,7 +29,7 @@ feature 'user Creates story', %{
     body = 'Testing out this cool new edition to the story'
     fill_in('story[title]', with: title)
     fill_in('story[body]', with: body)
-    click_button('Create Story')
+    click_button('Update Story')
 
     expect(current_path).to eq(story_path(tale))
     expect(page).to have_content(title)
@@ -49,7 +49,7 @@ feature 'user Creates story', %{
     body = 'How fast can I type this without making a mistake'
     fill_in('story[title]', with: '')
     fill_in('story[body]', with: body)
-    click_button('Create Story')
+    click_button('Update Story')
 
     expect(page).to have_content("Oops! Please fill
     in all required fields and try again.")
