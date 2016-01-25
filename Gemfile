@@ -45,6 +45,8 @@ group :development, :test do
   gem 'shoulda', require: false
   gem 'orderly'
   gem 'quiet_assets'
+  gem 'carrierwave'
+  gem 'mini_magick'
 end
 
 group :development do

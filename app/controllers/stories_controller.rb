@@ -49,19 +49,12 @@ class StoriesController < ApplicationController
     @story = Story.find(params[:id])
 
     if @story.update_attributes(story_params)
-      # if current_user.admin?
-        redirect_to @story, notice:
-        "Looking good! Story Edited Successfully."
-
-          # "Admin successfully edited lifehack: #{@lifehack.title}"
-      # else
-        # redirect_to @story, notice: 'Story Edited Successfully!'
-      # end
+      redirect_to @story, notice:
+      "Looking good! Story Edited Successfully."
     else
       flash.now[:error] = 'Oops! Please fill in all
         required fields and try again.'
       render :edit
-      # render :edit, notice: 'You are not the authorized user'
     end
   end
 
@@ -81,7 +74,7 @@ class StoriesController < ApplicationController
   private
 
   def story_params
-    params.require(:story).permit(:title, :body)
+    params.require(:story).permit(:title, :body, :creator_id, :story_photo)
   end
 
   def authorize_user

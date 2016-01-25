@@ -1,5 +1,10 @@
-<br>
-<br>
+<% unless @story.story_photo.nil? %>
+<div class="small-12 large-10 large-centered columns">
+  <div class="personal-image">
+    <%=image_tag @story.story_photo %>
+  </div>
+  <% end %>
+</div>
 
 <div class="row">
   <div class="panel lifehack_title small-12 large-8 large-centered columns">
