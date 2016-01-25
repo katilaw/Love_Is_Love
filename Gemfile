@@ -34,6 +34,7 @@ gem 'foundation-rails', '5.5.3.2'
 gem 'faker'
 gem 'factory_girl_rails'
 gem 'fog-aws'
+gem 'carrierwave'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -46,7 +47,6 @@ group :development, :test do
   gem 'shoulda', require: false
   gem 'orderly'
   gem 'quiet_assets'
-  gem 'carrierwave'
   gem 'mini_magick'
   gem "dotenv-rails"
 end
