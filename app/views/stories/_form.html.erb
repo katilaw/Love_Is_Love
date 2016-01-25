@@ -8,7 +8,9 @@
       <%= f.label :body, class:'form-text' %>
       <%= f.text_area :body, size: "20x16" %>
 
-      <%= f.hidden_field :creator, value: current_user %>
+      <%= f.hidden_field :creator_id, value: current_user.id %>
+
+      <%= f.file_field :story_photo %>
 
     <div class="actions">
       <% unless current_page?(new_story_path(@story)) %>

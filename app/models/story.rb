@@ -5,6 +5,8 @@ class Story < ActiveRecord::Base
   before_validation :strip_whitespace
   validates :body, presence: true, null: false
 
+  mount_uploader :story_photo, StoryPhotoUploader
+
   def short_body
     desired_length = 40
     unless body.nil? || body.strip.empty?
