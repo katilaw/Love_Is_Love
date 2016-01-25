@@ -33,7 +33,7 @@ gem 'devise'
 gem 'foundation-rails', '5.5.3.2'
 gem 'faker'
 gem 'factory_girl_rails'
-gem 'fog-aws'
+gem 'fog'
 gem 'carrierwave'
 
 group :development, :test do
