@@ -1,8 +1,6 @@
 # encoding: utf-8
 
 class StoryPhotoUploader < CarrierWave::Uploader::Base
-  # include CarrierWave::MiniMagick
-
   if Rails.env.test?
     storage :file
   else
