@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 class StoryPhotoUploader < CarrierWave::Uploader::Base
-  if Rails.env.test?
+  if Rails.env.test? || Rails.env.development?
     storage :file
   else
     storage :fog

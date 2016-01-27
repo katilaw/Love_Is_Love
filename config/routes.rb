@@ -9,4 +9,8 @@ Rails.application.routes.draw do
   resources :stories, only: [:show] do
     resources :comments, only: [:new, :edit, :update, :create, :destroy]
   end
+
+  resources :stories, only: [:show] do
+    resources :story_links, only: [:new, :create]
+  end
 end

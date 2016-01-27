@@ -1,0 +1,18 @@
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<%= form_for [@story, @story_link] do |f| %>
+  <div>
+    <h3>Choose a Story</h3>
+    <%= f.label :requestor_id, "Story Collections" %>
+    <%= f.select :requestor_id, Story.where( creator: current_user.id ).map { |story| [story.title, story.id] } %>
+    <%= f.hidden_field :requestee_id, value: @story.id %>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  </div>
+<% end %>
