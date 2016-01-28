@@ -33,20 +33,38 @@
               <%= link_to 'Sign Up', new_user_registration_path, :class => "button round registration" %>
             </li>
           <% else %>
-            <li class="has-dropdown">
-              <a href="#">Story Link Requests</a>
-              <ul class="dropdown">
-                <li><a href="#">First link in dropdown</a></li>
-                <li class="active"><a href="#">Active link in dropdown</a></li>
-              </ul>
-            </li>
-            <li class="divider"></li>
+            <% unless current_page?(new_story_path) %>
+              <li class="has-dropdown">
+                <% unless current_page?(root_path) %>
+                  <% if @links.nil? %>
+                    <li class="active">No Linked Stories</li>
+                  <% else %>
+                    <a href="#">Stories Linked To Page</a>
+                    <ul class="dropdown">
+                      <% @links.each do |link| %>
+                        <li><%= link_to link.requestee_title, story_path(link.requestee_id)%></li>
+                      <% end %>
+                    </ul>
+                  <% end %>
+                <% else %>
+                  <% if @links.nil? %>
+                    <li class="active">No Linked Stories</li>
+                  <% else %>
+                    <a href="#">All My Stories Links</a>
+                    <ul class="dropdown">
+                      <% @links.each do |link| %>
+                        <li><%= link_to link.requestee_title, story_path(link.requestee_id)%></li>
+                      <% end %>
+                    </ul>
+                  <% end %>
+                <% end %>
+              </li>
+              <li class="divider"></li>
+            <% end %>
             <li class="has-form">
               <%= link_to 'Sign Out', destroy_user_session_path, :class => "button alert round registration", method: :delete %>
             </li>
             <li class="divider"></li>
-
-
           <% end %>
         </ul>
       </section>

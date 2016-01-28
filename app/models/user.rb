@@ -1,8 +1,7 @@
 class User < ActiveRecord::Base
   has_many :stories
-  has_many :story_links, through: :stories
-  has_many :requests
   has_many :comments
+  has_many :story_links
   validates :first_name, presence: true
   validates :last_name, presence: true
   # Include default devise modules. Others available are:

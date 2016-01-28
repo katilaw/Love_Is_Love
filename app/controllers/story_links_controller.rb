@@ -19,6 +19,6 @@ class StoryLinksController < ApplicationController
   private
 
   def story_link_params
-    params.require(:story_link).permit(:requestor_id, :requestee_id)
+    params.require(:story_link).permit(:user_id, :requestor_id, :requestee_id, :requestee_title)
   end
 end
