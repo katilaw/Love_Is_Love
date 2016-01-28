@@ -10,7 +10,8 @@ feature 'user creates a stoy link', %{
   # [] User2 story appears on User1 story show page
 
   let!(:user) { FactoryGirl.create(:user) }
-  let!(:story) { FactoryGirl.create(:story, title:  "Hello World", creator: user) }
+  let!(:story) { FactoryGirl.create(:story,
+    title: "Hello World", creator: user) }
   let!(:user2) { FactoryGirl.create(:user) }
   let!(:story2) { FactoryGirl.create(:story, creator: user2) }
 

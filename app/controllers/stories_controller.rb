@@ -16,7 +16,8 @@ class StoriesController < ApplicationController
     if user_signed_in?
       @comments = @story.comments.order(created_at: :desc)
       @current_user_stories = Story.where(creator_id: current_user.id)
-      @links = StoryLink.where(user_id: current_user.id, requestor_id: params[:id])
+      @links = StoryLink.where(user_id:
+        current_user.id, requestor_id: params[:id])
     end
   end
 
