@@ -2,7 +2,7 @@ require "rails_helper"
 
 feature "story photo" do
   # Acceptance Criteria:
-  # [] If I am logged in, I can optionally add a pciture with my story
+  # [√] If I am logged in, I can optionally add a pciture with my story
   let!(:user) { FactoryGirl.create(:user) }
 
   scenario "user uploads a story photo" do

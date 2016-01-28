@@ -1,9 +1,10 @@
 class StoriesController < ApplicationController
-  before_action :authorize_user, except: [:index, :show, :new]
+  before_action :authorize_user, except: [:index, :show, :new, :create]
 
   def index
     if user_signed_in?
       @stories = Story.order(created_at: :desc)
+      @links = StoryLink.where(user_id: current_user.id)
     else
       @stories = Story.order(created_at: :desc).limit(6)
     end
@@ -14,7 +15,9 @@ class StoriesController < ApplicationController
     @comment = Comment.new
     if user_signed_in?
       @comments = @story.comments.order(created_at: :desc)
-
+      @current_user_stories = Story.where(creator_id: current_user.id)
+      @links = StoryLink.where(user_id:
+        current_user.id, requestor_id: params[:id])
     end
   end
 

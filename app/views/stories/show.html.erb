@@ -1,10 +1,10 @@
 <% unless @story.story_photo.nil? %>
-<div class="small-12 large-10 large-centered columns">
-  <div class="personal-image">
-    <%=image_tag @story.story_photo %>
+  <div class="small-12 large-10 large-centered columns">
+    <div class="personal-image">
+      <%=image_tag @story.story_photo %>
+    </div>
   </div>
-  <% end %>
-</div>
+<% end %>
 
 <div class="row">
   <div class="panel lifehack_title small-12 large-8 large-centered columns">
@@ -28,27 +28,29 @@
   </div>
 </div>
 
-<ul class="addstory small-2 small-centered columns">
+<ul class="addstory small-3 small-centered columns">
   <% if user_signed_in? %>
   <%= link_to 'Add Comment', new_story_comment_path(@story),
   class: 'button round' %>
   <% end %>
 </ul>
 
+<% if @current_user_stories.present? %>
+  <%= link_to "Link Request", new_story_story_link_path(@story), class: 'button' %>
+<% end %>
+
 <div class="row">
-  <table>
-    <% if user_signed_in? && !@story.comments.empty? %>
-      <div class="container">
-        <%= render @comments %>
-      </div>
-    <% elsif @story.comments.empty? %>
-      <div class="specialtext">
-        No coments yet!
-      </div>
-    <% else %>
-      <div class="specialtext">
-        Sign up to get access to full content.
-      </div>
-    <% end %>
-  </table>
+  <% if user_signed_in? && !@story.comments.empty? %>
+    <div class="container">
+      <%= render @comments %>
+    </div>
+  <% elsif @story.comments.empty? %>
+    <div class="specialtext">
+      No coments yet!
+    </div>
+  <% else %>
+    <div class="specialtext">
+      Sign up to get access to full content.
+    </div>
+  <% end %>
 </div>
