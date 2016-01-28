@@ -7,11 +7,10 @@ feature 'user creates a stoy link', %{
 } do
 
   # Acceptance Criteria:
-  # [] User2 story appears on User1 story show page
+  # [√] User2 story appears on User1 story show page
 
   let!(:user) { FactoryGirl.create(:user) }
-  let!(:story) { FactoryGirl.create(:story,
-    title: "Hello World", creator: user) }
+  let!(:sto) { FactoryGirl.create(:story, title: "Hi Wor", creator: user) }
   let!(:user2) { FactoryGirl.create(:user) }
   let!(:story2) { FactoryGirl.create(:story, creator: user2) }
 
@@ -20,12 +19,12 @@ feature 'user creates a stoy link', %{
     click_link(story2.title)
     click_on("Link Request")
 
-    select "Hello World", from: "Story Collections"
+    select "Hi Wor", from: "Story Collections"
     click_button("Create Story link")
 
-    visit story_path(story)
-    expect(page).to have_content(story.title)
-    expect(page).to have_content(story.body)
+    visit story_path(sto)
+    expect(page).to have_content(sto.title)
+    expect(page).to have_content(sto.body)
 
     click_on("Stories Linked To Page")
     expect(page).to have_link(story2.title)
