@@ -68,6 +68,12 @@ class StoriesController < ApplicationController
       comment.destroy
     end
 
+    @links = StoryLink.where(user_id:
+      current_user.id, requestor_id: @story.id)
+    @links.each do |link|
+      link.destroy
+    end
+
     @story.destroy
 
     redirect_to root_path,
