@@ -5,3 +5,13 @@
 .simple_form input[type='submit'] {
   color: $replacement-white;
 }
+
+.special-button {
+  border-color: $stolen-blue-color;
+  border-style: groove;
+  border-width: 5px;
+}
+
+.comment-table {
+  width: 28.5em;
+}
