@@ -22,7 +22,7 @@
       </table>
       <th>
         <% if @story.creator == current_user %>
-        <%= link_to 'Edit Story', edit_story_path(@story), class: 'button round' %><%= button_to 'Delete Story', @story, { method: :delete} %>
+        <%= link_to 'Edit Story', edit_story_path(@story), class: 'button small round' %><%= button_to 'Delete Story', @story, { method: :delete, class: 'button small round'} %>
         <% end %>
       </th>
   </div>
@@ -36,7 +36,7 @@
 </ul>
 
 <% if @current_user_stories.present? %>
-  <%= link_to "Link Request", new_story_story_link_path(@story), class: 'button' %>
+  <%= link_to "Link Request", new_story_story_link_path(@story), class: ' special-button button' %>
 <% end %>
 
 <div class="row">

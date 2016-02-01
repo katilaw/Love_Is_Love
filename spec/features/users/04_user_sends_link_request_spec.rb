@@ -21,7 +21,7 @@ feature 'user send a story link request', %{
     click_on("Link Request")
 
     select "Hi Wor", from: "Story Collections"
-    click_button("Create Story link")
+    click_button("Create Story Link")
 
     expect(page).to have_content('Request processesed. Pending approval.')
   end

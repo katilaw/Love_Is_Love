@@ -20,7 +20,7 @@ feature 'user creates a stoy link', %{
     click_on("Link Request")
 
     select "Hi Wor", from: "Story Collections"
-    click_button("Create Story link")
+    click_button("Create Story Link")
 
     visit story_path(sto)
     expect(page).to have_content(sto.title)

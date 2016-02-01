@@ -37,34 +37,44 @@
               <li class="has-dropdown">
                 <% unless current_page?(root_path) %>
                   <% if @links.nil? %>
-                    <li class="active">No Linked Stories</li>
+                    <ul class="dropdown">
+                      <li class="active"><a href="#">H! No Linked Stories</a></li>
+                    </ul>
                   <% else %>
                     <a href="#">Stories Linked To Page</a>
-                    <ul class="dropdown">
-                      <% @links.each do |link| %>
-                        <li><%= link_to link.requestee_title, story_path(link.requestee_id)%></li>
-                      <% end %>
-                    </ul>
+                    <% unless @links.empty? %>
+                      <ul class="dropdown">
+                        <% @links.each do |link| %>
+                          <li><%= link_to link.requestee_title, story_path(link.requestee_id)%></li>
+                        <% end %>
+                      </ul>
+                    <% else %>
+                      <ul class="dropdown">
+                        <li class="active"><a href="#">No Linked Stories</a></li>
+                      </ul>
+                    <% end %>
+                    <li class="divider"></li>
                   <% end %>
                 <% else %>
-                  <% if @links.nil? %>
-                    <li class="active">No Linked Stories</li>
-                  <% else %>
-                    <a href="#">All My Stories Links</a>
-                    <ul class="dropdown">
-                      <% @links.each do |link| %>
-                        <li><%= link_to link.requestee_title, story_path(link.requestee_id)%></li>
-                      <% end %>
-                    </ul>
-                  <% end %>
+                  <a href="#">All My Stories Links</a>
+                    <% unless @links.empty? %>
+                      <ul class="dropdown">
+                        <% @links.each do |link| %>
+                          <li><%= link_to link.requestee_title, story_path(link.requestee_id)%></li>
+                        <% end %>
+                      </ul>
+                    <% else %>
+                      <ul class="dropdown">
+                        <li class="active"><a href="#">No Linked Stories</a></li>
+                      </ul>
+                    <% end %>
+                  <li class="divider"></li>
                 <% end %>
               </li>
-              <li class="divider"></li>
-            <% end %>
+              <% end %>
             <li class="has-form">
               <%= link_to 'Sign Out', destroy_user_session_path, :class => "button alert round registration", method: :delete %>
             </li>
-            <li class="divider"></li>
           <% end %>
         </ul>
       </section>
