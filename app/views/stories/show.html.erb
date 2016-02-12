@@ -44,13 +44,13 @@
     <div class="container">
       <%= render @comments %>
     </div>
-  <% elsif @story.comments.empty? %>
+  <% elsif user_signed_in? && @story.comments.empty? %>
     <div class="specialtext">
       No coments yet!
     </div>
   <% else %>
     <div class="specialtext">
-      Sign up to get access to full content.
+      Sign in to get access full to content.
     </div>
   <% end %>
 </div>
