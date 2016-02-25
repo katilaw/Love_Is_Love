@@ -13,6 +13,6 @@ class StoryPhotoUploader < CarrierWave::Uploader::Base
 
   def default_url
     ActionController::Base.helpers.asset_path(
-      "fallback/" + [version_name, "default-user-pic.png"].compact.join('_'))
+      "default/" + [version_name, "default-user-pic.png"].compact.join('_'))
   end
 end

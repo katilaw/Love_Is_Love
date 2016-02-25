@@ -5,6 +5,8 @@ class Story < ActiveRecord::Base
   validates :title, presence: true, null: false
   before_validation :strip_whitespace
   validates :body, presence: true, null: false
+  devise :database_authenticatable, :registerable,
+    :recoverable, :rememberable, :trackable, :validatable
   mount_uploader :story_photo, StoryPhotoUploader
 
   def short_body
